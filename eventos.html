@@ -5,11 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS - Eventos DOM</title>
-    <style></style>
+    <style>
+        div#area{
+            font: 20pt Arial;
+            background-color: #2a8b2a; color: #fff;
+            width: 200px; height: 200px;
+
+            text-align: center; line-height: 200px;
+        }
+    </style>
 </head>
 <body>
-    <div id="area">
-        Intereja...
+    <div id="area" onclick="clicar()" onmouseover="entrar()" onmouseout="sair()">
+        Interaja...
     </div>
+
+
+    <script>
+        let a = document.querySelector('div#area')
+        
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseover', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            a.innerHTML = '<strong>Clicou</strong>'
+        }
+
+        function entrar() {
+            a.style.background = 'blue'
+        }
+
+        function sair() {
+            a.style.background = 'red'
+        }
+    </script>
 </body>
 </html>
