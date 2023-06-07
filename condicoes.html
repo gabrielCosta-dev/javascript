@@ -15,8 +15,15 @@
     <input type="number" name="vel" id="vel">
     <input type="button" value="Verificar" onclick="calcular()">
     <div id="res">
-
     </div>
+
+    <h1>Qual país você mora?</h1>
+    <label for="mora">País atual: </label>
+    <input type="text" name="mora" id="mora">
+    <input type="button" value="Verificar" onclick="cidadania()">
+    <div id="resposta">
+    </div>
+
 
     <script>
         function calcular(){
@@ -30,6 +37,19 @@
             }
 
             res.innerHTML += `<p>Dirija sempre com o cinto de segurança!</p>`
+        }
+
+        function cidadania(){
+            let morar = document.querySelector('input#mora').value
+            let resposta = document.getElementById('resposta')
+
+            console.log(morar)
+
+            if (morar == 'Brasil') {
+               resposta.innerHTML = `<p>Você mora atualmento no ${morar}. Então é <strong>brasileiro(a).</strong></p>`
+            } else {
+                resposta.innerHTML = `<p>Você não mora atualmento no ${morar}. <strong>Gringuito de mierda</strong>.</p>`
+            }
         }
     </script>
 </body>
