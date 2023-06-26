@@ -3,7 +3,7 @@ function calcularPassos(){
     let fim = Number(document.querySelector('input#fim').value);
     let passo = Number(document.querySelector('input#passo').value);
 
-    if (inicio !== '' && fim !== '' && passo !== '') {
+    if (inicio !== '' && fim !== '' && passo !== '' && passo > 0) {
         inicio = Number(inicio);
         fim = Number(fim);
         passo = Number(passo);
