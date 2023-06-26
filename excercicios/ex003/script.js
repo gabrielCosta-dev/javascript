@@ -3,24 +3,32 @@ function calcularPassos(){
     let fim = Number(document.querySelector('input#fim').value);
     let passo = Number(document.querySelector('input#passo').value);
 
-    if (!isNaN(inicio)) {
-        let resultado = document.getElementById('resultado');
-        resultado.innerHTML = '';
+    if (inicio !== '' && fim !== '' && passo !== '') {
+        inicio = Number(inicio);
+        fim = Number(fim);
+        passo = Number(passo);
 
-        while (inicio <= fim) {
-            let andar = inicio + passo;
-        
-            if (inicio <= fim - passo) {
-              resultado.innerHTML += `Passo ${andar} \u{261E} `;
-            } else {
-              resultado.innerHTML += `Passo ${andar}.`;
-            }
-        
-            inicio += passo;
-          }
+        if (!isNaN(inicio) && passo !== 0) {
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+    
+            while (inicio <= fim) {
+                let andar = inicio + passo;
+            
+                if (inicio <= fim - passo) {
+                  resultado.innerHTML += `Passo ${andar} \u{261E} `;
+                } else {
+                  resultado.innerHTML += `Passo ${andar}.`;
+                }
+            
+                inicio += passo;
+              }
+        } else {
+            alert('Algo deu errado! Certifique-se de preencher os campos corretamente.');
+        }
     } else {
-        alert('Algo deu errado!');
-}
+        console.log('Por favor, preencha todos os campos.')
+    }
 
 }
 
