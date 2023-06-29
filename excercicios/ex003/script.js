@@ -13,13 +13,13 @@ function calcularPassos() {
         resultado.innerHTML = '';
   
         if (fim > inicio) {
-          while (inicio <= fim) {
+          while (inicio < fim) {
             let andar = inicio + passo;
   
             if (andar <= fim) {
-              resultado.innerHTML += `Passo ${andar} \u{261E} `;
+              resultado.innerHTML += `Passo ${andar} \u{1f449} `;
             } else {
-              resultado.innerHTML += `Passo ${andar}.`;
+              resultado.innerHTML += `Passo ${andar} \u{1f4c1}.`;
             }
   
             inicio += passo;
@@ -29,9 +29,9 @@ function calcularPassos() {
             let andar = inicio - passo;
   
             if (andar >= fim) {
-              resultado.innerHTML += `Passo ${andar} \u{261E} `;
+              resultado.innerHTML += `Passo ${andar} \u{1f449} `;
             } else {
-              resultado.innerHTML += `Passo ${andar}.`;
+              resultado.innerHTML += `Passo ${andar} \u{1f4c1}.`;
             }
   
             inicio -= passo;
