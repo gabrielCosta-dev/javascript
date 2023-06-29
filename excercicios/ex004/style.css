@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body{
-    background-color: rgb(70, 142, 236);
+    background-color: rgb(69, 194, 89);
     font: normal 15pt Arial;
 }
 
@@ -14,6 +14,15 @@ section{
     border-radius: 10px;
     padding: 15px; margin: auto;
     width: 500px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+div > textarea {
+    /* margin: 10px; */
+
+    position: relative;
+    top: 50px; left: 75px;
+
+    transform: translate(-2%, -15%);
 }
 
 footer{
