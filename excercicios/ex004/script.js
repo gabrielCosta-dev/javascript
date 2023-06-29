@@ -41,6 +41,7 @@ function calcular() {
             } while (multiplicador <= 10);
 
             document.getElementById('resultado').innerHTML = resultado;
+            document.getElementById('resultado').style.textAlign = 'center'
                 } else {
                     alert('Digite um número, por favor.');
                 }

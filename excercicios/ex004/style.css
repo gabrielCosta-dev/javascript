@@ -18,11 +18,21 @@ section{
 
 div > textarea {
     /* margin: 10px; */
+    /* text-align: center; */
 
     position: relative;
     top: 50px; left: 75px;
 
-    transform: translate(-2%, -15%);
+    transform: translate(-2%, -17%);
+}
+
+button{
+    border-radius: 5px; border: 1px solid greenyellow;
+    padding: 5px; background-color: rgb(6, 109, 6); color: greenyellow;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 footer{
