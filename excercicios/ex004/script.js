@@ -25,7 +25,7 @@
         } */
   
 function calcular() {
-    let numero = Number(document.getElementById('numero').value);
+    let numero = document.getElementById('numero').value.trim();
 
     if (numero !== '') {
         numero = Number(numero)
@@ -36,7 +36,7 @@ function calcular() {
 
             do {
                 let produto = numero * multiplicador;
-                resultado += `${numero} x ${multiplicador} = ${produto}<br>`;
+                resultado += `${numero} x ${multiplicador} = ${produto} \n`;
                 multiplicador++;
             } while (multiplicador <= 10);
 
