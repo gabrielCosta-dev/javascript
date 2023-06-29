@@ -1,29 +1,3 @@
-/* function calcular() {
-    let numero = Number(document.getElementById('numero').value);
-  
-    if (!isNaN(numero) && numero !== '') {
-        let multiplicador = numero - 1
-
-        let resultado = document.getElementById('resultado');
-        resultado.innerHTML = '';
-    
-        do {
-            let valor = numero * multiplicador
-            resultado.innerHTML = `${numero} x ${multiplicador} = ${valor}`
-            incremento++
-        } while (incremento <= 10);
-
-        
-    } else {
-      alert('Digite um número, por favor.');
-    }
-  }
- */
-  /* for (let i = numero; i <= 10; i++) {
-            let valor = i * i;
-            resultado.innerHTML += i +' x ' +i+ ' = '+ valor +'</br>';
-        } */
-  
 function calcular() {
     let numero = document.getElementById('numero').value.trim();
 
