@@ -20,8 +20,12 @@ div#cima{
     text-align: center;
 }
 
+#limpar{
+    text-align: right;
+}
+
 input[type = number]{
-    width: 30%;
+    width: 12%;
 }
 
 footer{
