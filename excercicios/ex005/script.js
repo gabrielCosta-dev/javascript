@@ -67,11 +67,6 @@ function calcular() {
     
 }
 
-/* function limpar() {
-    vetor = []
-    console.log(vetor)
-} */
-
 function limpar() {
    document.querySelector('input#numero').value = ''
     document.getElementById('adicionados').innerHTML = ''
