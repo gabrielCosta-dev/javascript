@@ -15,14 +15,11 @@ function adicionar() {
                 add.appendChild(option)
                 vetor.push(numero)
                 vetor.sort()
-
-                console.log(vetor)
-                console.log(vetor.length)
             } else {
-                alert('Este número já está incluso na array. Digite outro número.')
+                alert('Este número já está incluso na array! Digite outro número.')
             }
         } else {
-            alert('Número inválido! 2')
+            alert('Número inválido! Verifique se o valor está entre 1 e 100.')
         }
     } else {
         alert('Número inválido!')
@@ -30,9 +27,7 @@ function adicionar() {
 }
 
 function finalizar() {
-    //let num = document.querySelector('input#numero').value;
     let resposta = document.querySelector('div#resposta');
-    //let numero = Number(num);
 
     // Modificações Array
     vetor.sort(function(a, b) {
