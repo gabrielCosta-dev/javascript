@@ -74,7 +74,7 @@ function finalizar() {
 
 
 function limpar() {
-   document.querySelector('input#numero').value = 1
+    document.querySelector('input#numero').value = 1
     document.getElementById('adicionados').innerHTML = ''
     document.getElementById('resposta').innerHTML = ''
     vetor = []
