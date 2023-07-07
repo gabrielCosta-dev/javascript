@@ -1,76 +1,88 @@
 let vetor = []
 
-function calcular() {
+function adicionar() {
     let num = document.querySelector('input#numero').value
     let add = document.querySelector('select#adicionados')
-    let resposta = document.querySelector('div#resposta')
 
-    if (num !== '' && num >= 1 && num <= 100) {
+    if (num !== '') {
         let numero = Number(num)
 
-        if (!(vetor.includes(numero))) {
-            //Criação option e edição select
-            let option = document.createElement('option')
-            add.appendChild(option)
-            option.innerHTML = `Vetor ${numero} foi adicionado.`
-            
-            //Modificações Array
-            vetor.push(numero)
-            vetor.sort(function(a , b){
-                return a - b
-            })
-            let menor = vetor[0]
-            let maior = vetor[vetor.length - 1]
+        if (numero >= 1 && numero <= 100) {
+            if (!vetor.includes(numero)) {
+                //Criação option e edição select
+                let option = document.createElement('option')
+                option.innerHTML = `Vetor ${numero} foi adicionado.`
+                add.appendChild(option)
+                vetor.push(numero)
+                vetor.sort()
 
-            //Modificações Resposta
-            resposta.innerHTML = ''//Para limpar o valor de resposta
-
-            //Menor Valor
-            let paragrafoMenor = document.createElement('p')
-            paragrafoMenor.innerHTML = `O <strong>menor</strong> valor no vetor é <strong>${menor}!</strong>`
-            resposta.appendChild(paragrafoMenor)
-
-            //Maior Valor
-            let paragrafoMaior = document.createElement('p')
-            paragrafoMaior.innerHTML = `O <strong>maior</strong> valor no vetor é <strong>${maior}!</strong>`
-            resposta.appendChild(paragrafoMaior)
-
-            //Quantidade de itens
-            let paragrafoLength = document.createElement('p')
-            paragrafoLength.innerHTML = `O <strong>número de itens</strong> no seu vetor é <strong>${vetor.length}!</strong>`
-            resposta.appendChild(paragrafoLength)
-            //console.log(vetor.length)
-
-            //Soma e Média
-            let total = 0
-            for (var i = 0; i < vetor.length; i++) {
-                total += vetor[i];
+                console.log(vetor)
+                console.log(vetor.length)
+            } else {
+                alert('Este número já está incluso na array. Digite outro número.')
             }
-
-            let media = total / vetor.length
-
-            //PArágrafos Soma e Média
-            let paragrafoSoma = document.createElement('p')
-            paragrafoSoma.innerHTML = `A <strong>soma</strong> de todos os valores no vetor é <strong>${total}!</strong>`
-            resposta.appendChild(paragrafoSoma)
-
-            let paragrafoMedia = document.createElement('p')
-            paragrafoMedia.innerHTML = `A <strong>média</strong> dos valores no vetor é <strong>${media}!</strong>`
-            resposta.appendChild(paragrafoMedia)
-
         } else {
-            alert('Este número já está incluso na array. Digite outro número.')
+            alert('Número inválido! 2')
         }
     } else {
         alert('Número inválido!')
     }
-    
 }
 
+function finalizar() {
+    //let num = document.querySelector('input#numero').value;
+    let resposta = document.querySelector('div#resposta');
+    //let numero = Number(num);
+
+    // Modificações Array
+    vetor.sort(function(a, b) {
+        return a - b;
+    });
+    let menor = vetor[0];
+    let maior = vetor[vetor.length - 1];
+
+    // Modificações Resposta
+    resposta.innerHTML = ''; // Para limpar o valor de resposta
+
+    // Menor Valor
+    let paragrafoMenor = document.createElement('p');
+    paragrafoMenor.innerHTML = `O <strong>menor</strong> valor no vetor é <strong>${menor}!</strong>`;
+    resposta.appendChild(paragrafoMenor);
+
+    // Maior Valor
+    let paragrafoMaior = document.createElement('p');
+    paragrafoMaior.innerHTML = `O <strong>maior</strong> valor no vetor é <strong>${maior}!</strong>`;
+    resposta.appendChild(paragrafoMaior);
+
+    // Quantidade de itens
+    let paragrafoLength = document.createElement('p');
+    paragrafoLength.innerHTML = `O <strong>número de itens</strong> no seu vetor é <strong>${vetor.length}!</strong>`;
+    resposta.appendChild(paragrafoLength);
+
+    // Soma e Média
+    let total = 0;
+    for (var i = 0; i < vetor.length; i++) {
+        total += vetor[i];
+    }
+
+    let media = total / vetor.length;
+
+    // Parágrafos Soma e Média
+    let paragrafoSoma = document.createElement('p');
+    paragrafoSoma.innerHTML = `A <strong>soma</strong> de todos os valores no vetor é <strong>${total}!</strong>`;
+    resposta.appendChild(paragrafoSoma);
+
+    let paragrafoMedia = document.createElement('p');
+    paragrafoMedia.innerHTML = `A <strong>média</strong> dos valores no vetor é <strong>${media}!</strong>`;
+    resposta.appendChild(paragrafoMedia);
+}
+
+
 function limpar() {
-   document.querySelector('input#numero').value = ''
+   document.querySelector('input#numero').value = 1
     document.getElementById('adicionados').innerHTML = ''
     document.getElementById('resposta').innerHTML = ''
     vetor = []
+    console.log(vetor)
 }
 
