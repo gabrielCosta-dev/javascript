@@ -1,11 +1,12 @@
 let vetor = []
 
 function adicionar() {
-    let num = document.querySelector('input#numero').value
+    let num = document.querySelector('input#numero')
     let add = document.querySelector('select#adicionados')
+    let resposta = document.querySelector('div#resposta');
 
     if (num !== '') {
-        let numero = Number(num)
+        let numero = Number(num.value)
 
         if (numero >= 1 && numero <= 100) {
             if (!vetor.includes(numero)) {
@@ -15,6 +16,10 @@ function adicionar() {
                 add.appendChild(option)
                 vetor.push(numero)
                 vetor.sort()
+
+                num.value = ''
+                num.focus()
+                resposta.innerHTML = ''
             } else {
                 alert('Este número já está incluso na array! Digite outro número.')
             }
